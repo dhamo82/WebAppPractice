@@ -38,7 +38,7 @@ steps:
   inputs:
     command: 'test'
     projects: '**/webtest.csproj'
-    arguments: '/p:CollectCoverage=true /p:CoveretOutputFormat=corbeture  /p:CoveretOutput=./MyCoverage/'   
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=corbetura  /p:CoverletOutput=./MyCoverage/'   
     publishTestResults: true  
 
 - task: PublishCodeCoverageResults@1
