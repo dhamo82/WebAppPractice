@@ -38,14 +38,14 @@ steps:
   inputs:
     command: 'test'
     projects: '**/webtest.csproj'
-    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=corbetura  /p:CoverletOutput=./MyCoverage/'   
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura  /p:CoverletOutput=./MyCoverage/'   
     publishTestResults: true  
 
 - task: PublishCodeCoverageResults@1
   displayName: PublishCodeCoverageResults
   inputs:
     codeCoverageTool: Cobertura
-    summaryFileLocation: '$(Build.SourceDirectory)/**/MyCoverage/coverage.corbetura.xml'
+    summaryFileLocation: '$(Build.SourceDirectory)/**/MyCoverage/coverage.cobertura.xml'
 
 
 - task: DotNetCoreCLI@2
