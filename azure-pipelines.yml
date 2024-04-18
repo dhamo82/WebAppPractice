@@ -41,12 +41,11 @@ steps:
     arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura  /p:CoverletOutput=./MyCoverage/'   
     publishTestResults: true  
 
-- task: PublishCodeCoverageResults@1
+
+- task: PublishCodeCoverageResults@2
   displayName: PublishCodeCoverageResults
   inputs:
-    codeCoverageTool: Cobertura
     summaryFileLocation: '$(Build.SourceDirectory)/**/MyCoverage/coverage.cobertura.xml'
-
 
 - task: DotNetCoreCLI@2
   displayName: publish 
