@@ -29,10 +29,19 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: Test
   inputs:
     command: 'test'
     projects: '**/webtest.csproj'
-    arguments: '--configuration $(buidConfiguration)'   
+    arguments: '/p:CollectCoverage=true /p:CoveretOutputFormat=corbeture  /p:CoveretOutput=./MyCoverage/'   
+
+
+- task: PublishCodeCoverageResults@1
+  displayName: PublishCodeCoverageResults
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(Build.SourceDirectory)/**/MyCoverage/coverage.corbetura.xml'
+
 
 - task: DotNetCoreCLI@2
   displayName: publish 
