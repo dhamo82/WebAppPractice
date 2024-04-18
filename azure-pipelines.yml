@@ -45,7 +45,7 @@ steps:
 - task: PublishCodeCoverageResults@2
   displayName: PublishCodeCoverageResults
   inputs:
-    summaryFileLocation: '$(BuildSourceDirectory)/**/MyCoverage/*.xml'
+    summaryFileLocation: '/home/vsts/work/1/s/webtest/MyCoverage/coverage.cobertura.xml'
 
 - task: DotNetCoreCLI@2
   displayName: publish 
